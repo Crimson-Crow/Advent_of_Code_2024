@@ -15,6 +15,8 @@ for r, line in enumerate(grid):
 # Part 1
 antinodes = set()
 for antennas in network.values():
+    if len(antennas) == 1:
+        continue
     for a, b in itertools.permutations(antennas, 2):
         r = 2 * a[0] - b[0]
         c = 2 * a[1] - b[1]
@@ -25,8 +27,8 @@ print(len(antinodes))
 # Part 2
 antinodes = set()
 for antennas in network.values():
-    #if len(antennas) == 1:
-     #   continue
+    if len(antennas) == 1:
+        continue
     for a, b in itertools.combinations(antennas, 2):
         antinodes.add(a)
         dr = b[0] - a[0]
