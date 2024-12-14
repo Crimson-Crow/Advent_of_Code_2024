@@ -1,9 +1,9 @@
 # Advent of Code 2024 Day 14
 import re
-from itertools import batched, count
+import itertools
 import math
 
-robots = tuple(batched(map(int, re.findall(r"-?\d+", open("input.txt").read())), 4))
+robots = tuple(itertools.batched(map(int, re.findall(r"-?\d+", open("input.txt").read())), 4))
 WIDTH, HEIGHT = 101, 103
 MIDDLE_X, MIDDLE_Y = WIDTH // 2, HEIGHT // 2
 
@@ -36,6 +36,7 @@ def print_grid(i):
         grid[y][x] = "X"
     for row in grid:
         print("".join(row))
+
 t = find_tree(robots)
 print_grid(t)
 print(t)
