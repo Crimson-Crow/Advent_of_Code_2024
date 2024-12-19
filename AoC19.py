@@ -5,7 +5,7 @@ patterns = tuple(input[0].split(", "))
 def count_combinations(s: str) -> int:
     cache = {}
     s_len = len(s)
-    def matches(subseq, index):
+    def matches(subseq: str, index: int) -> bool:
         end_index = index + len(subseq)
         return end_index <= s_len and subseq == s[index:end_index]
 
