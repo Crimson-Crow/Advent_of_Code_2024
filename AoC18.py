@@ -67,10 +67,3 @@ for pos in bytes_list:
             unconnected = [merged] + groups[False]
     elif not (is_top_right or is_bottom_left):
         unconnected.append([pos])
-    
-    # print(top_right, bottom_left, unconnected)
-    # elif nb_true > 1:
-        # merged = sum(groups[True], [])
-        # merged.append(pos)
-        # unconnected = [merged] + groups[False]
-        
